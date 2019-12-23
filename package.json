@@ -1,0 +1,41 @@
+{
+  "name": "seele-sdk-javascript",
+  "version": "1.0.1",
+  "description": "seele's javascript sdk",
+  "main": "sle.js",
+  "dependencies": {
+    "bip44-constants": "^8.0.5",
+    "cli-spinners": "^2.2.0",
+    "keccak": "^2.0.0",
+    "ora": "^4.0.3",
+    "rlp": "^2.2.4",
+    "scrypt-js": "^2.0.4",
+    "secp256k1": "^3.7.1",
+    "solc": "^0.5.13",
+    "terminal-kit": "^1.32.1",
+    "web3": "^1.2.4",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muyiy/seele-sdk-javascript.git"
+  },
+  "keywords": [
+    "js",
+    "sdk",
+    "seele"
+  ],
+  "author": "tinoma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muyiy/seele-sdk-javascript/issues"
+  },
+  "homepage": "https://github.com/muyiy/seele-sdk-javascript#readme"
+}
