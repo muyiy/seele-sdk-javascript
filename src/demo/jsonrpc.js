@@ -1,28 +1,82 @@
-const { commands, isCommand, getNamespace } = require('./CMD')
+var commands = module.exports.commands = {
+  "seele" : [
+    'getInfo', // no parameters
+    'getBalance', // account:string - wallet address
+    'addTx',
+    'getAccountNonce',
+    'getBlockHeight',
+    'getBlock',
+    'call',
+    'getLogs',
+    'generatePayload',
+    'estimateGas',
+    'isListening',
+    'isSyncing'
+  ],
+  "txpool" : [
+    'getBlockTransactionCount',
+    'getTransactionByBlockIndex',
+    'getTransactionByHash',
+    'getReceiptByTxHash',
+    'getDebtByHash',
+  ],
+  "network" : [
+    'getPeersInfo',
+    'getPeerCount',
+    'getNetworkVersion',
+    'getProtocolVersion',
+    'getNetworkID',
+  ],
+  "miner" : [
+    'start',
+    'stop',
+    'status',
+    'getCoinbase',
+    'setThreads',
+    'setCoinbase',
+    'getEngineInfo'
+  ],
+  "debug" : [
+    'printBlock',
+    'getTxPoolContent',
+    'getTxPoolTxCount',
+    'getPendingTransactions',
+    'getPendingDebts',
+    'dumpHeap'
+  ]}
 
+var isCommand = module.exports.isCommand = function(command) {
+  for (const namespace in commands) {
+    for (const key in commands[namespace]) {
+      if (commands[namespace][key] === command){
+        return true
+      }
+    }
+  }
+}
 
+var getNamespace = module.exports.getNamespace = function(command) {
+  for (const namespace in commands) {
+    for (const key in commands[namespace]) {
+      if (commands[namespace][key] === command){
+        return namespace
+      }
+    }
+  }
+}
 
 if (typeof window !== 'undefined' && window.XMLHttpRequest) {
-  XMLHttpRequest = window.XMLHttpRequest; // jshint ignore: line
+  XMLHttpRequest = window.XMLHttpRequest;
 } else {
-  XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest; // jshint ignore: line
-  // XMLHttpRequest = new XMLHttpRequest();
+  XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 }
-/**
-* @class
-*/
+
 class seeleJSONRPC {
-  constructor(host, timeout) {
-    this.host = host || 'http://localhost:8037';
+  constructor(address, timeout) {
+    this.host = address || 'http://localhost:8037';
     this.timeout = timeout || 30000;
   }
 
-  /**
-  * Should be called to prepare a new ClientRequest
-  * @method prepareRequest
-  * @param {Boolean} true if request should be async
-  * @return {ClientRequest} object
-  */
   prepareRequest(async) {
     var request = new XMLHttpRequest();
     request.withCredentials = false;
@@ -32,11 +86,9 @@ class seeleJSONRPC {
   }
 
   /**
-  * Should be called to make async request
-  * @method send
+  * Async request
   * @param {String} command
   * @return {Object} request
-  * @todo Using namespace
   */
   send(command) {
     var currHost = this.host;
@@ -92,19 +144,11 @@ class seeleJSONRPC {
         request.send(rpcData);
       } catch (error) {
         reject(JSON.parse(JSON.stringify(error)))
-        // reject(args, new Error('CONNECTION ERROR: Couldn\'t connect to node '+ currHost +'.'));
       }
       return request;
     })
   }
 
-  /**
-  * Should be called to make sync request
-  * @method send
-  * @param {String} command
-  * @return {Object} result
-  * @todo Using namespace
-  */
   sendSync(command) {
     if(!isCommand(command)){
       this.invalid(command)
@@ -145,14 +189,9 @@ class seeleJSONRPC {
     }
   }
 
-  /**
-   * If an invalid command is called, it is processed
-   * @param {string} command
-   */
   invalid(command) {
     return console.log(new Error('No such command "' + command + '"'));
   }
-
 }
 
 for (const namespace in commands) {

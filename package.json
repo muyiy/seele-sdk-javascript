@@ -5,23 +5,41 @@
   "main": "sle.js",
   "dependencies": {
     "bip44-constants": "^8.0.5",
-    "cli-spinners": "^2.2.0",
     "keccak": "^2.0.0",
     "ora": "^4.0.3",
     "rlp": "^2.2.4",
     "scrypt-js": "^2.0.4",
     "secp256k1": "^3.7.1",
     "solc": "^0.5.13",
-    "terminal-kit": "^1.32.1",
     "web3": "^1.2.4",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "cli-spinners": "^2.2.0",
+    "jsdoc": "^3.6.3",
+    "minami": "^1.2.3",
     "mocha": "^6.2.2",
+    "terminal-kit": "^1.32.2",
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha",
+    "doc-s": "npm run sphinx:js2rst; npm run sphinx:rst2html",
+    "doc-j": "node_modules/.bin/jsdoc --configure doc/.minami.jsdoc.json",
+    "sphinx:js2rst": "node_modules/.bin/jsdoc --configure doc/.sphinxRTD.jsdoc.json",
+    "sphinx:rst2html": "cd doc && rm -rf sphinx-html && make html"
+  },
+  "mocha":{
+    "diff": true,
+    "extension": ["js"],
+    "opts": false,
+    "package": "./package.json",
+    "reporter": "spec",
+    "slow": 75,
+    "timeout": 2000,
+    "ui": "bdd",
+    "watch-files": ["test/*.js"],
+    "watch-ignore": ["lib/vendor"]
   },
   "repository": {
     "type": "git",

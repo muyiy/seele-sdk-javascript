@@ -1,3 +1,7 @@
-- package.json
+- final package
+  - seele-sdk-js
   - repo link
   - license
+- jsdoc for documentation
+- ts for dev
+- mocha for test

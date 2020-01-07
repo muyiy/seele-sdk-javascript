@@ -56,7 +56,7 @@ function randHex(len) {
 
 function decryptKeyfileSub(keyfile, pass, html){}
 
-function encryptKeyfileSub(private, pass, html){}
+function encryptKeyfileSub(privkey, pass, html){}
 // THIS
 async function decryptKeyfile(keyfile, pass, html) {
   //check version
@@ -99,7 +99,7 @@ async function decryptKeyfile(keyfile, pass, html) {
   }
 }
 // THIS
-async function encryptKeyfile(private, pass, html) {
+async function encryptKeyfile(privatekey, pass, html) {
   return new Promise(function(resolve, reject) {
     const salt = randHex(64)
     const iv = randHex(32)
@@ -113,7 +113,7 @@ async function encryptKeyfile(private, pass, html) {
         } else if (key) {
           // console.log("Found: " + key);
           const crypto = require('crypto');
-          prib = Buffer.from(private.slice(2),'hex')
+          prib = Buffer.from(privatekey.slice(2),'hex')
           const cipher = crypto.createDecipheriv('aes-128-ctr', Buffer.from(key.slice(0,16)), ivb)
           var ciphertx = cipher.update(prib,'utf8','hex')
           const p1 = Buffer.from(key.slice(16,32))
@@ -228,6 +228,8 @@ async function txValidity(tx){
 
     //nonce, amount, price and limit must be positive integers
   }
+
+function publicToAddress(){}
 
 function publicKeyOfSub(privateKey){
   return web3.eth.accounts.privateKeyToAccount(privateKey).address
