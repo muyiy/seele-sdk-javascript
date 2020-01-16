@@ -12,7 +12,14 @@ npm test
 ## Doc
 
 Full API reference and more tutorials are linked [here]("").
-
+```
+/**
+ * @method
+ * @param
+ * @return
+ * @example
+ */
+ ```
 
 
 ## Doc generation

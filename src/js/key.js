@@ -7,6 +7,8 @@ const maxShard    = 4
 
 /** @namespace*/
 var key = {
+
+
   /**
    * @method
    * @param {number} targetShard Target shard
@@ -31,6 +33,8 @@ var key = {
       throw "invalid shard"
     }
   },
+
+
   /**
    * @method
    * @param {string} address Address whose shard will be calculated
@@ -47,6 +51,8 @@ var key = {
     sum += (buf.readUInt16BE(18) >> 4)
     return (sum % maxShard) + 1
   },
+
+
   /**
    * @method
    * @param {string} pri Privatekey whose address will be calculated

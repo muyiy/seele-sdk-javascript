@@ -4,7 +4,12 @@
   "description": "seele's javascript sdk",
   "main": "sle.js",
   "dependencies": {
+    "base-58": "0.0.1",
+    "bip32": "^2.0.5",
+    "bip39": "^3.0.2",
     "bip44-constants": "^8.0.5",
+    "elliptic": "^6.4.0",
+    "fs-extra": "^8.1.0",
     "keccak": "^2.0.0",
     "ora": "^4.0.3",
     "rlp": "^2.2.4",
@@ -15,6 +20,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "cli-spinners": "^2.2.0",
     "jsdoc": "^3.6.3",
     "minami": "^1.2.3",
@@ -24,22 +30,29 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "doc-s": "npm run sphinx:js2rst; npm run sphinx:rst2html",
-    "doc-j": "node_modules/.bin/jsdoc --configure doc/.minami.jsdoc.json",
+    "docs": "cd doc; rm -rf rst-sphinx html-sphinx; npm run sphinx:js2rst; npm run sphinx:rst2html",
+    "docj": "cd doc; rm -rf html-jsdoc*; npm run jsdoc:js2html;",
+    "jsdoc:js2html": "node_modules/.bin/jsdoc --configure doc/.minami.jsdoc.json",
     "sphinx:js2rst": "node_modules/.bin/jsdoc --configure doc/.sphinxRTD.jsdoc.json",
     "sphinx:rst2html": "cd doc && rm -rf sphinx-html && make html"
   },
-  "mocha":{
+  "mocha": {
     "diff": true,
-    "extension": ["js"],
+    "extension": [
+      "js"
+    ],
     "opts": false,
     "package": "./package.json",
     "reporter": "spec",
     "slow": 75,
-    "timeout": 2000,
+    "timeout": 12000,
     "ui": "bdd",
-    "watch-files": ["test/*.js"],
-    "watch-ignore": ["lib/vendor"]
+    "watch-files": [
+      "test/*.test.js"
+    ],
+    "watch-ignore": [
+      "lib/vendor"
+    ]
   },
   "repository": {
     "type": "git",
