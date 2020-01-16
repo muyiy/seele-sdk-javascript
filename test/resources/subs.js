@@ -35,6 +35,9 @@ async function getLogsByHeight(height, address, abi, name){
           var types   = searchArrayByField(abi, 'name', name)
           var result  = web3.eth.abi.decodeParameters(types.inputs, d[0].data);
           console.log(result);
+
+          var topic   = web3.eth.abi.encodeEventSignature(types)
+          console.log(topic);
         })
         .catch(e=>{
           console.log(e);
