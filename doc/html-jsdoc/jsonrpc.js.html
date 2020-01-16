@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jsonrpc.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Getting_Started.html">Getting_Started</a></li><li class="nav-item"><a href="tutorial-contract.html">contract</a></li><li class="nav-item"><a href="tutorial-jsonrpc.html">jsonrpc</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="seeleCLIENT.html">seeleCLIENT</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="seeleCONTRACT.html">seeleCONTRACT</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="seeleJSONRPC.html">seeleJSONRPC</a></span></li><li class="nav-heading">Namespaces</li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="key.html">key</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.addof">addof</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.shard">shard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.spawn">spawn</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="keystore.html">keystore</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="keystore.html#.lock">lock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="keystore.html#.open">open</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="signature.html">signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.initTxn">initTxn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.signMsg">signMsg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.signTxn">signTxn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.tellMsg">tellMsg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.tellTxn">tellTxn</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="wallet.html">wallet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.distSeed">distSeed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.distWord">distWord</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.fromSeed">fromSeed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.fromWord">fromWord</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">jsonrpc.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var commands = module.exports.commands = {
+  "seele" : [
+    'getInfo', // no parameters
+    'getBalance', // account:string - wallet address
+    'addTx',
+    'getAccountNonce',
+    'getBlockHeight',
+    'getBlock',
+    'call',
+    'getLogs',
+    'generatePayload',
+    'estimateGas',
+    'isListening',
+    'isSyncing'
+  ],
+  "txpool" : [
+    'getBlockTransactionCount',
+    'getTransactionByBlockIndex',
+    'getTransactionByHash',
+    'getReceiptByTxHash',
+    'getDebtByHash',
+  ],
+  "network" : [
+    'getPeersInfo',
+    'getPeerCount',
+    'getNetworkVersion',
+    'getProtocolVersion',
+    'getNetworkID',
+  ],
+  "miner" : [
+    'start',
+    'stop',
+    'status',
+    'getCoinbase',
+    'setThreads',
+    'setCoinbase',
+    'getEngineInfo'
+  ],
+  "debug" : [
+    'printBlock',
+    'getTxPoolContent',
+    'getTxPoolTxCount',
+    'getPendingTransactions',
+    'getPendingDebts',
+    'dumpHeap'
+  ]}
+
+var isCommand = module.exports.isCommand = function(command) {
+  for (const namespace in commands) {
+    for (const key in commands[namespace]) {
+      if (commands[namespace][key] === command){
+        return true
+      }
+    }
+  }
+}
+
+var getNamespace = module.exports.getNamespace = function(command) {
+  for (const namespace in commands) {
+    for (const key in commands[namespace]) {
+      if (commands[namespace][key] === command){
+        return namespace
+      }
+    }
+  }
+}
+
+if (typeof window !== 'undefined' &amp;&amp; window.XMLHttpRequest) {
+  XMLHttpRequest = window.XMLHttpRequest;
+} else {
+  XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+}
+
+/**@class */
+class seeleJSONRPC {
+  constructor(address, timeout) {
+    this.host = address || 'http://localhost:8037';
+    this.timeout = timeout || 30000;
+  }
+
+  prepareRequest(async) {
+    var request = new XMLHttpRequest();
+    request.withCredentials = false;
+    request.open('POST', this.host, async);
+    request.setRequestHeader('Content-Type', 'application/json');
+    return request;
+  }
+
+  send(command) {
+    var currHost = this.host;
+    return new Promise((resolve, reject) => {
+      if(!isCommand(command)){
+        this.invalid(command)
+        reject(new Error(`command ${command} does not exist`))
+      }
+      var args = Array.prototype.slice.call(arguments, 1)
+      if (typeof args[args.length - 1] === 'function') {
+        resolve = args[args.length - 1].bind(this);
+        reject = args.pop().bind(this);
+      }
+
+      var request = this.prepareRequest(true)
+      var rpcData = JSON.stringify({
+        id: new Date().getTime(),
+        method: getNamespace(command).concat("_").concat(command),
+        params: args
+      });
+
+      request.onload = function () {
+        if (request.readyState === 4 &amp;&amp; request.timeout !== 1) {
+          var result = JSON.parse(request.responseText)
+          try {
+            if (result.error) {
+              result.error.args = JSON.stringify(args)
+              result.error.command = command.toString()
+              resolve(result)
+            } else {
+              resolve(result.result)
+            }
+          } catch (exception) {
+            reject(new Error(exception))
+          }
+        }
+      };
+
+      request.ontimeout = function () {
+        // reject(args,new Error('CONNECTION TIMEOUT: timeout of ' + currHost + ' ms achieved'));
+        reject(new Error('CONNECTION TIMEOUT: timeout of ' + currHost + ' ms achieved'))
+      };
+
+      request.onerror = function () {
+        if(request.status == 0){
+          reject(new Error('CONNECTION ERROR: Couldn\'t connect to node '+currHost +'.'))
+        }else{
+          reject(new Error(request.statusText))
+        }
+      };
+
+      try {
+        request.send(rpcData);
+      } catch (error) {
+        reject(JSON.parse(JSON.stringify(error)))
+      }
+      return request;
+    })
+  }
+
+  sendSync(command) {
+    if(!isCommand(command)){
+      this.invalid(command)
+      reject(new Error(`command ${command} does not exist`))
+    }
+    var args    = Array.prototype.slice.call(arguments, 1)
+
+    var request = this.prepareRequest(false)
+    var rpcData = JSON.stringify({
+      id: new Date().getTime(),
+      method: getNamespace(command).concat("_").concat(command),
+      params: args
+    });
+
+    request.onerror = function () {
+      throw request.statusText
+    };
+
+    try {
+      request.send(rpcData);
+    } catch (error) {
+      console.log(error)
+      throw new Error('CONNECTION ERROR: Couldn\'t connect to node '+ this.host +'.');
+    }
+
+    var result = request.responseText;
+
+    try {
+      // console.log(result);
+      result = JSON.parse(result);
+      if (result.error) {
+        throw new Error(JSON.stringify(result));
+      }
+
+      return result.result
+    } catch (exception) {
+      throw new Error(exception + ' : ' + JSON.stringify(result));
+    }
+  }
+
+  invalid(command) {
+    return console.log(new Error('No such command "' + command + '"'));
+  }
+}
+
+for (const namespace in commands) {
+  commands[namespace].forEach(command => {
+    var cp = seeleJSONRPC.prototype
+    cp[command] = function() {
+      return this.send(command, ...arguments);
+    }
+  })
+}
+
+module.exports = seeleJSONRPC;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Jan 16 2020 13:47:30 GMT-0800 (Pacific Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

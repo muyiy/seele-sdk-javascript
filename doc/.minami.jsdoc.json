@@ -24,6 +24,8 @@
         "encoding": "utf8",
         "private": true,
         "recurse": true,
+        "tutorials": "./doc/md-tutorials/",
+        "readme": "./doc/README.md",
         "template": "./node_modules/minami"
     }
 }

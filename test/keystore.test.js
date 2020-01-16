@@ -1,5 +1,5 @@
 const keystore  = require('../src/js/keystore.js');
-const assert     = require('chai').assert;
+const assert    = require('chai').assert;
 const fs        = require('fs-extra');
 let accounts    = { keystore : keystore }
 

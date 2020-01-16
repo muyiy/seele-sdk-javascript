@@ -71,6 +71,7 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
   XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 }
 
+/**@class */
 class seeleJSONRPC {
   constructor(address, timeout) {
     this.host = address || 'http://localhost:8037';
@@ -85,11 +86,6 @@ class seeleJSONRPC {
     return request;
   }
 
-  /**
-  * Async request
-  * @param {String} command
-  * @return {Object} request
-  */
   send(command) {
     var currHost = this.host;
     return new Promise((resolve, reject) => {
