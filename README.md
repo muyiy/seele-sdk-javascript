@@ -7,39 +7,34 @@ npm i seele-sdk-javascript
 
 ```bash
 npm test
+# for individual test
+# npm test test/key.test
+# npm test test/keystore.test
 ```
 
 ## Doc
 
 Full API reference and more tutorials are linked [here]("").
-```
-/**
- * @method
- * @param
- * @return
- * @example
- */
- ```
-
 
 ## Doc generation
 
 There are two html documentation styles:
+
 1. [sphinx]("http://sphinx-doc.org/") with [Read the Docs]("https://github.com/readthedocs/sphinx_rtd_theme") theme.
 
-  a. Install sphinx packages.
+  - Install sphinx packages.
   ```bash
   pip install sphinx-js
   pip install sphinx-rtd-theme
   ```
-  b. Generate.
+  - Generate.
   ```bash
-  npm run doc-s
+  npm run docs
   ```
 
 2. [jsdoc](https://devdocs.io/jsdoc/) with [minami]("https://github.com/nijikokun/minami") theme.
 
-  a. Generate.
+  - Generate.
   ```bash
-  npm run doc-j
+  npm run docj
   ```
