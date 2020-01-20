@@ -1,5 +1,5 @@
 const key       = require('../src/js/key.js');
-const assert     = require('chai').assert;
+const assert    = require('chai').assert;
 let accounts    = { key: key }
 
 describe('key', function() {

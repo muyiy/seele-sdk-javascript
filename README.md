@@ -24,8 +24,10 @@ There are two html documentation styles:
 
   - Install sphinx packages.
   ```bash
-  pip install sphinx-js
-  pip install sphinx-rtd-theme
+  brew install sphinx
+  sphinx-build --version
+  conda install -c anaconda sphinx_rtd_theme
+  conda install -c anaconda sphinx
   ```
   - Generate.
   ```bash
@@ -37,4 +39,10 @@ There are two html documentation styles:
   - Generate.
   ```bash
   npm run docj
+  ```
+
+3. more related to mac
+  ```bash
+  brew install pyenv
+  
   ```

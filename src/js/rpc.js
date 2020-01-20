@@ -81,6 +81,7 @@ class seeleJSONRPC {
   prepareRequest(async) {
     var request = new XMLHttpRequest();
     request.withCredentials = false;
+    request.timeout = this.timeout;
     request.open('POST', this.host, async);
     request.setRequestHeader('Content-Type', 'application/json');
     return request;
@@ -123,7 +124,8 @@ class seeleJSONRPC {
         }
       };
 
-      request.ontimeout = function () {
+      request.ontimeout = () => {
+        console.error('time out');
         // reject(args,new Error('CONNECTION TIMEOUT: timeout of ' + currHost + ' ms achieved'));
         reject(new Error('CONNECTION TIMEOUT: timeout of ' + currHost + ' ms achieved'))
       };

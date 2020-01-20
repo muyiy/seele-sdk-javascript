@@ -13,11 +13,13 @@
     "plugins": [
         "plugins/markdown"
     ],
+    "favicon": "./doc/_icons/s.png",
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": true,
         "useLongnameInNav": false,
-        "showInheritedInNav": true
+        "showInheritedInNav": true,
+        "favicon": "./doc/_icons/s.png"
     },
     "opts": {
         "destination": "./doc/html-jsdoc",

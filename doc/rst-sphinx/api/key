@@ -1,0 +1,67 @@
+==================
+Namespace: ``key``
+==================
+
+
+.. contents:: Local Navigation
+   :local:
+
+Children
+========
+
+.. toctree::
+   :maxdepth: 1
+   
+   
+Description
+===========
+
+
+
+
+.. _key.spawn:
+
+
+Function: ``spawn``
+===================
+
+
+
+.. js:function:: spawn(targetShard)
+
+    
+    :param number targetShard: <p>Target shard</p>
+    :return object: <p>PrivateKey and address from shard</p>
+    
+.. _key.shard:
+
+
+Function: ``shard``
+===================
+
+
+
+.. js:function:: shard(address)
+
+    
+    :param string address: <p>Address whose shard will be calculated</p>
+    :return number: <p>Shard of address</p>
+    
+.. _key.addof:
+
+
+Function: ``addof``
+===================
+
+
+
+.. js:function:: addof(pri)
+
+    
+    :param string pri: <p>Privatekey whose address will be calculated</p>
+    :return string: <p>Address of private key</p>
+    
+
+
+
+

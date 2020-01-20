@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Namespace: signature &mdash; seele-sdk-javascript  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/s.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> seele-sdk-javascript
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Namespace: <code class="docutils literal notranslate"><span class="pre">signature</span></code></a><ul>
+<li><a class="reference internal" href="#children">Children</a></li>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#function-signmsg">Function: <code class="docutils literal notranslate"><span class="pre">signMsg</span></code></a></li>
+<li><a class="reference internal" href="#function-signtxn">Function: <code class="docutils literal notranslate"><span class="pre">signTxn</span></code></a></li>
+<li><a class="reference internal" href="#function-tellmsg">Function: <code class="docutils literal notranslate"><span class="pre">tellMsg</span></code></a></li>
+<li><a class="reference internal" href="#function-telltxn">Function: <code class="docutils literal notranslate"><span class="pre">tellTxn</span></code></a></li>
+<li><a class="reference internal" href="#function-inittxn">Function: <code class="docutils literal notranslate"><span class="pre">initTxn</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">seele-sdk-javascript</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Namespace: <code class="docutils literal notranslate"><span class="pre">signature</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/signature.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="namespace-signature">
+<h1>Namespace: <code class="docutils literal notranslate"><span class="pre">signature</span></code><a class="headerlink" href="#namespace-signature" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="local-navigation">
+<p class="topic-title">Local Navigation</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#children" id="id1">Children</a></p></li>
+<li><p><a class="reference internal" href="#description" id="id2">Description</a></p></li>
+<li><p><a class="reference internal" href="#function-signmsg" id="id3">Function: <code class="docutils literal notranslate"><span class="pre">signMsg</span></code></a></p></li>
+<li><p><a class="reference internal" href="#function-signtxn" id="id4">Function: <code class="docutils literal notranslate"><span class="pre">signTxn</span></code></a></p></li>
+<li><p><a class="reference internal" href="#function-tellmsg" id="id5">Function: <code class="docutils literal notranslate"><span class="pre">tellMsg</span></code></a></p></li>
+<li><p><a class="reference internal" href="#function-telltxn" id="id6">Function: <code class="docutils literal notranslate"><span class="pre">tellTxn</span></code></a></p></li>
+<li><p><a class="reference internal" href="#function-inittxn" id="id7">Function: <code class="docutils literal notranslate"><span class="pre">initTxn</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="children">
+<h2><a class="toc-backref" href="#id1">Children</a><a class="headerlink" href="#children" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id2">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="function-signmsg">
+<span id="signature-signmsg"></span><h2><a class="toc-backref" href="#id3">Function: <code class="docutils literal notranslate"><span class="pre">signMsg</span></code></a><a class="headerlink" href="#function-signmsg" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="signMsg">
+<code class="sig-name descname">signMsg</code><span class="sig-paren">(</span><em class="sig-param">prikey</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#signMsg" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prikey</strong> (<em>string</em>) – &lt;p&gt;Privatekey used to sign message&lt;/p&gt;</p></li>
+<li><p><strong>msg</strong> (<em>string</em>) – &lt;p&gt;Message to be signed&lt;/p&gt;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return string</dt>
+<dd class="field-even"><p>&lt;p&gt;String signature&lt;/p&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="function-signtxn">
+<span id="signature-signtxn"></span><h2><a class="toc-backref" href="#id4">Function: <code class="docutils literal notranslate"><span class="pre">signTxn</span></code></a><a class="headerlink" href="#function-signtxn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="signTxn">
+<code class="sig-name descname">signTxn</code><span class="sig-paren">(</span><em class="sig-param">prikey</em>, <em class="sig-param">tx</em><span class="sig-paren">)</span><a class="headerlink" href="#signTxn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prikey</strong> (<em>string</em>) – &lt;p&gt;Privatekey used to sign transaction&lt;/p&gt;</p></li>
+<li><p><strong>tx</strong> (<em>object</em>) – &lt;p&gt;Transaction object to be signed&lt;/p&gt;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return object</dt>
+<dd class="field-even"><p>&lt;p&gt;Signed transaction object&lt;/p&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="function-tellmsg">
+<span id="signature-tellmsg"></span><h2><a class="toc-backref" href="#id5">Function: <code class="docutils literal notranslate"><span class="pre">tellMsg</span></code></a><a class="headerlink" href="#function-tellmsg" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="tellMsg">
+<code class="sig-name descname">tellMsg</code><span class="sig-paren">(</span><em class="sig-param">sign</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#tellMsg" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sign</strong> (<em>string</em>) – &lt;p&gt;Signature of signed message&lt;/p&gt;</p></li>
+<li><p><strong>msg</strong> (<em>string</em>) – &lt;p&gt;Signed message&lt;/p&gt;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return string</dt>
+<dd class="field-even"><p>&lt;p&gt;Address string&lt;/p&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="function-telltxn">
+<span id="signature-telltxn"></span><h2><a class="toc-backref" href="#id6">Function: <code class="docutils literal notranslate"><span class="pre">tellTxn</span></code></a><a class="headerlink" href="#function-telltxn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="tellTxn">
+<code class="sig-name descname">tellTxn</code><span class="sig-paren">(</span><em class="sig-param">sign</em>, <em class="sig-param">hash</em><span class="sig-paren">)</span><a class="headerlink" href="#tellTxn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sign</strong> (<em>string</em>) – &lt;p&gt;Signature of signed transaction&lt;/p&gt;</p></li>
+<li><p><strong>hash</strong> (<em>string</em>) – &lt;p&gt;Hash of transaction&lt;/p&gt;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return string</dt>
+<dd class="field-even"><p>&lt;p&gt;Address string&lt;/p&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="function-inittxn">
+<span id="signature-inittxn"></span><h2><a class="toc-backref" href="#id7">Function: <code class="docutils literal notranslate"><span class="pre">initTxn</span></code></a><a class="headerlink" href="#function-inittxn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="initTxn">
+<code class="sig-name descname">initTxn</code><span class="sig-paren">(</span><em class="sig-param">from</em>, <em class="sig-param">to</em>, <em class="sig-param">amount</em><span class="sig-paren">)</span><a class="headerlink" href="#initTxn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from</strong> (<em>string</em>) – &lt;p&gt;Sender address&lt;/p&gt;</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – &lt;p&gt;Receiver address&lt;/p&gt;</p></li>
+<li><p><strong>amount</strong> (<em>number</em>) – &lt;p&gt;Send amount&lt;/p&gt;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return object</dt>
+<dd class="field-even"><p>&lt;p&gt;transaction object&lt;/p&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

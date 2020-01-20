@@ -20,21 +20,25 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "async": "^3.1.0",
+    "canonical-path": "^1.0.0",
     "chai": "^4.2.0",
     "cli-spinners": "^2.2.0",
+    "deasync": "^0.1.19",
     "jsdoc": "^3.6.3",
     "minami": "^1.2.3",
     "mocha": "^6.2.2",
+    "mustache": "^4.0.0",
     "terminal-kit": "^1.32.2",
     "typescript": "^3.7.4"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "docs": "cd doc; rm -rf rst-sphinx html-sphinx; npm run sphinx:js2rst; npm run sphinx:rst2html",
+    "docs": "cd doc; rm -rf rst-sphinx/api html-sphinx; npm run sphinx:js2rst; npm run sphinx:rst2html",
     "docj": "cd doc; rm -rf html-jsdoc*; npm run jsdoc:js2html;",
-    "jsdoc:js2html": "node_modules/.bin/jsdoc --configure doc/.minami.jsdoc.json",
-    "sphinx:js2rst": "node_modules/.bin/jsdoc --configure doc/.sphinxRTD.jsdoc.json",
-    "sphinx:rst2html": "cd doc && rm -rf sphinx-html && make html"
+    "jsdoc:js2html": "node_modules/.bin/jsdoc --configure ./doc/.minami.jsdoc.json",
+    "sphinx:js2rst": "node_modules/.bin/jsdoc --configure ./doc/.sphinxRTD.jsdoc.json",
+    "sphinx:rst2html": "cd doc; make html"
   },
   "mocha": {
     "diff": true,

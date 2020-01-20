@@ -3,6 +3,7 @@
 import sys
 import os
 import shlex
+# import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -17,12 +18,15 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'sphinx_rtd_theme',
+    'sphinx'
+    # 'sphinx-js',
+    # 'sphinx-rtd-theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -49,7 +53,7 @@ author = u'tinoma'
 # built documents.
 #
 # The short X.Y version.
-version = ''
+version = '1.0.0'
 # The full version, including alpha/beta/rc tags.
 release = ''
 
@@ -103,6 +107,7 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme = 'alabaster'
+# html_theme_path = ["_themes/sphinx_rtd_theme/sphinx_rtd_theme",]
 html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -127,7 +132,7 @@ html_theme = 'sphinx_rtd_theme'
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = '../_icons/s.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
