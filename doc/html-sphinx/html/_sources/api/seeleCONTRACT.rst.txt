@@ -19,15 +19,27 @@ Description
 
 
 
-.. _seeleCONTRACT.see:
+.. _seeleCONTRACT.[undefined]:
 
 
-Function: ``see``
-=================
+Function: ``[undefined]``
+=========================
 
 
 
-.. js:function:: see()
+.. js:function:: [undefined]()
+
+    
+    
+.. _seeleCONTRACT.codeOf:
+
+
+Function: ``codeOf``
+====================
+
+
+
+.. js:function:: codeOf()
 
     
     

@@ -1,24 +1,14 @@
-const Rpc   = require('../src/js/rpc.js');
+const RPC   = require('../src/js/rpc.js');
 const assert    = require('chai').assert;
+const rpc = new RPC('http://117.50.97.136:8037', 2)
 
-const rpc = new Rpc('http://117.50.97.136:8037', 2)
-// console.log(rpc);
-rpc.getBlock('',-1,true).then(d=>{
-  console.log(d);
-}).catch(e=>{
-  console.log(e);
+describe('rpc', function(){
+  describe('getinfo', function(){
+    it('gets information related to node', async function(){
+      var info = await rpc.getInfo()
+      // uncomment below to see info
+      // console.log(info);
+      assert.isAtMost(info.Shard, 4)
+    })
+  })
 })
-
-
-// describe('rpc', function(){
-//   describe('getInfo', function(){
-//     it('returns node information', async function(){
-//       try {
-//         var info = await rpc.getInfo()
-//       } catch(e){
-//         console.log(e);
-//       }
-//       assert.equal(info.Shard, 2);
-//     })
-//   })
-// });

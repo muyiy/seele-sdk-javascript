@@ -1,11 +1,11 @@
 {
-    "t1": {
-        "title": "Contract tutorial"
+    "0-name": {
+      "title": "Namespace functions"
     },
-    "t2": {
-        "title": "JSON-RPC tutorial"
+    "1-rpc": {
+      "title": "Using rpc"
     },
-    "t3": {
-        "title": "SDK-API tutorial"
+    "2-contract": {
+      "title": "Using contract"
     }
 }

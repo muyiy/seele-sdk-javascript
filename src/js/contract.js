@@ -1,11 +1,7 @@
-const fs    = require('fs-extra')
-const path  = require('path')
 const Web3  = require('web3')
 const web3  = new Web3()
-var abi     = fs.readJsonSync(path.join(__dirname, 'StemRootchain.json'))
-var address = '0x00d39049d839e1700a30a30c8fec717cbe0b0012'
 
-/** @class */
+/**@class */
 class seeleCONTRACT {
   constructor(address, abi){
     this.address = address
@@ -36,5 +32,4 @@ class seeleCONTRACT {
   }
 }
 
-var mycon = new seeleCONTRACT(address, abi)
-console.log(mycon.AddOperatorRequest('0x03bcaf796fe8cffd90ddbe0baeb21ab83a3a43e1','0x03bcaf796fe8cffd90ddbe0baeb21ab83a3a43e1'));
+module.exports = seeleCONTRACT

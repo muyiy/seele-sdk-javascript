@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>signature.js - Documentation</title>
+    <title>Using rpc - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,159 +29,32 @@
 
 <div id="main">
     
-    <h1 class="page-title">signature.js</h1>
+    <h1 class="page-title">Using rpc</h1>
     
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const createKeccakHash  = require('keccak')
-const RLP               = require('rlp')
-const secp256k1         = require('secp256k1')
 
-/** @namespace*/
-var signature = {
+<header>
+    
+</header>
 
+<article>
+    <h3>Instantiate the rpc class &amp; using the methods</h3>
+<pre class="prettyprint source lang-javascript"><code>const sle = require('seele-sdk-javascript')
 
-  /**
-   * @method
-   * @param {string} prikey Privatekey used to sign message
-   * @param {string} msg Message to be signed
-   * @return {string} String signature
-   * @example
-   * signature.signMsg()
-   * // returns
-   */
-  signMsg: function signMessageString(prikey, msg){
-    var hash      = createKeccakHash('keccak256').update(RLP.encode(msg)).digest().toString('hex')
-    var signature = secp256k1.sign(Buffer.from(hash, 'hex'), Buffer.from(prikey.slice(2), 'hex'))
-    var sign      = Buffer.concat([signature.signature, Buffer.from([signature.recovery])]).toString('base64')
-    return sign
-  },
+var web = sle.rpc('http://192.193.11.10:8029',2)
 
+web.getInfo().then(d=>{
+  console.log(d);
+}).catch(e=>{
+  console.log(e);
+})
 
-  /**
-   * @method
-   * @param {string} prikey Privatekey used to sign transaction
-   * @param {object} tx Transaction object to be signed
-   * @return {object} Signed transaction object
-   * @example
-   * signature.signTxn()
-   * // returns
-   */
-  signTxn: function signTransaction(prikey, tx){
-    var infolist = [
-      tx.Type,
-      tx.From,
-      tx.To,
-      tx.Amount,
-      tx.AccountNonce,
-      tx.GasPrice,
-      tx.GasLimit,
-      tx.Timestamp,
-      tx.Payload
-    ]
-    // console.log(RLP.encode(infolist));
-    var hash = "0x"+createKeccakHash('keccak256').update(RLP.encode(infolist)).digest().toString('hex')
-    var signature = secp256k1.sign(Buffer.from(hash.slice(2), 'hex'), Buffer.from(prikey.slice(2), 'hex'))
-    var sign = Buffer.concat([signature.signature, Buffer.from([signature.recovery])]).toString('base64')
-    var Data = tx
-    var txDone = {
-      "Hash": hash,
-      "Data": Data,
-      "Signature": {
-        "Sig": sign,
-      }
-    }
-    return txDone
-  },
-
-
-  /**
-   * @method
-   * @param {string} sign Signature of signed message
-   * @param {string} msg Signed message
-   * @return {string} Address string
-   * @example
-   * signature.tellMsg()
-   * // returns
-   */
-  tellMsg: function recoverMessageString(sign, msg){
-    var totalB= Buffer.from(sign, 'base64')
-    var signB = totalB.slice(0,64)
-    var rcvrB = totalB.slice(64)
-    var hashB = Buffer.from(createKeccakHash('keccak256').update(RLP.encode(msg)).digest().toString('hex'), 'hex')
-    var rcvr  = [...rcvrB]
-    var pubk  = secp256k1.recover(hashB, signB, rcvr[0], false).slice(1)
-    var addr  = publicToAddress('0x'+pubk.toString('hex'))
-    return addr
-  },
-
-
-  /**
-   * @method
-   * @param {string} sign Signature of signed transaction
-   * @param {string} hash Hash of transaction
-   * @return {string} Address string
-   * @example
-   * signature.tellTxn()
-   * // returns
-   */
-  tellTxn: function recoverTransaction(sign, hash){
-    var totalB= Buffer.from(sign, 'base64')
-    var signB = totalB.slice(0,64)
-    var rcvrB = totalB.slice(64)
-    var hashB = Buffer.from(hash.slice(2), 'hex')
-    var rcvr  = [...rcvrB]
-    var pubk  = secp256k1.recover(hashB, signB, rcvr[0], false).slice(1)
-    var addr  = publicToAddress('0x'+pubk.toString('hex'))
-    return addr
-  },
-
-
-  /**
-   * @method
-   * @param {string} from Sender address
-   * @param {string} to Receiver address
-   * @param {number} amount Send amount
-   * @return {object} transaction object
-   * @example
-   * signature.initTxn()
-   * // returns
-   */
-  initTxn: function initiateTransaction(from, to, amount){
-    //verify from, to, amount, payload?
-    return {
-          "Type":         0,
-          "From":         from,
-          "To":           to,
-          "Amount":       amount,
-          "AccountNonce": 0,
-          "GasPrice":     10,
-          "GasLimit":     200000,
-          "Timestamp":    0,
-          "Payload":      ''
-    }
-  }
-}
-
-function publicToAddress(pub){
-  var buf = Buffer.from(pub.slice(2), 'hex');
-  var add = "0x" + createKeccakHash('keccak256').update(RLP.encode(buf)).digest().slice(12).toString('hex').replace(/.$/i,"1")
-  return add;
-}
-
-module.exports = signature
 </code></pre>
-        </article>
-    </section>
+<p><code>getInfo</code> is a API function whose input and output is defined in <a href="">Seele API Documentation</a> along with all other functions available on Seele. Every function defined <a href="">Seele API Documentation</a> is also callable through and instance of this class.</p>
+</article>
 
-
-
+</section>
 
 </div>
 

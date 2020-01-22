@@ -11,7 +11,6 @@ Contents
    :maxdepth: 1
 
    
-   seeleCLIENT
    seeleCONTRACT
    seeleCONTRACT
    seeleCONTRACT
