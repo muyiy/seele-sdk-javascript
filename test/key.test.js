@@ -25,4 +25,10 @@ describe('key', function() {
       assert.equal(sle.key.spawn(1).privateKey.length, 66);
     });
   });
+  describe('valid', function() {
+    it('Checks the validity of the address', function() {
+      assert.equal(sle.key.valid('0x15dcb0a38ae4aef2bd88def8c3588a1196d0d2b1'), true);
+      assert.equal(sle.key.valid('0x15dcb0a38Ae4aef2bd88def8c3588a1196d0d2b1'), false);
+    })
+  })
 });

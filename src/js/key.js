@@ -66,6 +66,22 @@ var key = {
       var pub = privateToPublic(pri)
       var add = publicToAddress(pub)
       return add
+  },
+
+  /**
+   * @method
+   * @param {string} add Address to be verified
+   * @return {string} Validity of address
+   * @example
+   * key.valid('0x03bcaf796fe8cffd90d1245667921ab83a3a43e1')
+   * // returns
+   * // true
+   */
+  valid : function addressValidity(add){
+    if (!(/^0x[0-9a-f]{39}1$/.test(add) || /^0x[0-9A-F]{39}1$/.test(add))) {
+      return false;
+    }
+    return true
   }
 }
 
