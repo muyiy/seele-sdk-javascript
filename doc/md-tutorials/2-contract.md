@@ -9,4 +9,4 @@ var result = contract.yourMethod(...yourArguments)
 console.log(result);
 
 ```
-The ```byteCode``` field can then be used for call's payload or transaction's payload as further documented in [Seele API Documentation]().
+The ```byteCode``` field can then be used for call's payload or transaction's payload as further documented in [Seele API Documentation](https://seeletech.gitbook.io/wiki/developer/rpc).
