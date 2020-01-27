@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>contract.js - Documentation</title>
+    <title>Using subscribe - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,57 +29,37 @@
 
 <div id="main">
     
-    <h1 class="page-title">contract.js</h1>
+    <h1 class="page-title">Using subscribe</h1>
     
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const Web3  = require('web3')
-const web3  = new Web3()
 
-/**@class */
-class seeleCONTRACT {
-  constructor(address, abi){
-    this.address = address
-    this.abi     = abi
+<header>
+    
+</header>
 
-    abi.forEach((item, i) => {
-      this[item.name] = function(){
-        return this.codeOf(item, ...arguments)
-      }
-    });
-
-  }
-
-  codeOf(cmd){
-    var contract = new web3.eth.Contract(this.abi)
-    var args = Array.prototype.slice.call(arguments, 1)
-    try {
-      if ( cmd.type === 'function' ){
-        var byts = contract.methods[cmd.name](...args).encodeABI() || '0x00'
-      }
-    } catch(e) {
-      console.log(e);
-    }
-    return {
-      byteCode: byts,
-      methodInfo: cmd
-    }
-  }
+<article>
+    <pre class="prettyprint source lang-javascript"><code>const sle = require('seele-sdk-javascript')
+let subscription = new sle.subscribe({
+    &quot;host&quot;:&quot;http://117.50.38.29:8036&quot;
+});
+subscription.sub(subscription.topicList.newBlockHeaders,
+    {
+    &quot;startHeight&quot; : 1
 }
-
-module.exports = seeleCONTRACT
+).on('data',function (data) {
+    console.log(data.Height);
+    if (data.Height >= 10){
+        subscription.unsub(&quot;newBlockHeaders&quot;);
+    }
+}).on('error',function (error) {
+    console.log(error);
+    subscription.unsub(&quot;newBlockHeaders&quot;);
+})
 </code></pre>
-        </article>
-    </section>
+</article>
 
-
-
+</section>
 
 </div>
 

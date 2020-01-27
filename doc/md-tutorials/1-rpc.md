@@ -3,7 +3,7 @@
 ```javascript
 const sle = require('seele-sdk-javascript')
 
-var web = sle.rpc('http://192.193.11.10:8029',2)
+var web = new sle.rpc('http://192.193.11.10:8029',2)
 
 web.getInfo().then(d=>{
   console.log(d);

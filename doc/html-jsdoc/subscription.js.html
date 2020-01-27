@@ -1,4 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>subscription.js - Documentation</title>
 
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-0-name.html">Namespace functions</a></li><li class="nav-item"><a href="tutorial-1-rpc.html">Using rpc</a></li><li class="nav-item"><a href="tutorial-2-contract.html">Using contract</a></li><li class="nav-item"><a href="tutorial-3-subscribe.html">Using subscribe</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="seeleCONTRACT.html">seeleCONTRACT</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="seeleJSONRPC.html">seeleJSONRPC</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Subscription.html">Subscription</a></span></li><li class="nav-heading">Namespaces</li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="key.html">key</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.addof">addof</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.shard">shard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.spawn">spawn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="key.html#.valid">valid</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="keystore.html">keystore</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="keystore.html#.lock">lock</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="keystore.html#.open">open</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="signature.html">signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.initTxn">initTxn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.signMsg">signMsg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.signTxn">signTxn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.tellMsg">tellMsg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="signature.html#.tellTxn">tellTxn</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="wallet.html">wallet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.distSeed">distSeed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.distWord">distWord</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.fromSeed">fromSeed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="wallet.html#.fromWord">fromWord</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">subscription.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
 
 "use strict";
 
@@ -87,7 +128,7 @@ class Subscription {
 let listenBlockHeaders = function(host,options,eventEmitter){
     //options.startHeight: start listen from this block height
     let startHeight = -1;
-    if (options != undefined  && options.startHeight != undefined) {
+    if (options != undefined  &amp;&amp; options.startHeight != undefined) {
         startHeight = options.startHeight;
     }
     let blockHeight = startHeight
@@ -95,7 +136,7 @@ let listenBlockHeaders = function(host,options,eventEmitter){
          let seeleJSONRPC = new seele(host);
             try {
                 let result = seeleJSONRPC.sendSync("getBlock", '', blockHeight, false)
-                if (result.header!=undefined && result.header.Height!=undefined){
+                if (result.header!=undefined &amp;&amp; result.header.Height!=undefined){
                     eventEmitter.emit('data',result.header);
                     blockHeight = result.header.Height + 1;
                 }else{
@@ -134,7 +175,7 @@ let validateLogsTopicParams = function (host,options){
         do{
             try{
                 let result = seeleJSONRPC.sendSync("getBlock","",-1,false);
-                if (result.header!=undefined && result.header.Height!=undefined){
+                if (result.header!=undefined &amp;&amp; result.header.Height!=undefined){
                     options.startHeight = result.header.Height;
                     startHeight = options.startHeight
                 }
@@ -150,7 +191,7 @@ let validateLogsTopicParams = function (host,options){
 }
 let listenLogs = function (host,options,eventEmitter) {
     let err = validateLogsTopicParams(host,options);
-    if (err != null && err != ""){
+    if (err != null &amp;&amp; err != ""){
         return err.toString();
     }
     let blockHeight = options.startHeight;
@@ -158,7 +199,7 @@ let listenLogs = function (host,options,eventEmitter) {
     return setInterval(function () {
         try {
             let result = seeleJSONRPC.sendSync("getLogs", blockHeight, options.contractAddress, options.abiJSON, options.eventName)
-            if (result != undefined && result.length > 0){
+            if (result != undefined &amp;&amp; result.length > 0){
                 console.log(result);
                 eventEmitter.emit('data',result);
             }
@@ -176,17 +217,17 @@ let validateTransactionTopicParams = function (host,options){
     let from = options.from;
     let to = options.to;
     let account = options.account;
-    if (from != undefined && !utils.valid(from)){
+    if (from != undefined &amp;&amp; !utils.valid(from)){
         return new Error("option from address is invalid");
     }
-    if (to != undefined && !utils.valid(to)){
+    if (to != undefined &amp;&amp; !utils.valid(to)){
         return new Error("option to address is invalid");
     }
-    if (account != undefined && !utils.valid(account)){
+    if (account != undefined &amp;&amp; !utils.valid(account)){
         return new Error("option to address is invalid");
     }
     let txhash = options.txhash;
-    if (txhash == undefined && from == undefined && to ==undefined && account == undefined){
+    if (txhash == undefined &amp;&amp; from == undefined &amp;&amp; to ==undefined &amp;&amp; account == undefined){
         return new Error("subscription transaction should define at least one option:from, to, or txhash, account");
     }
 
@@ -200,7 +241,7 @@ let validateTransactionTopicParams = function (host,options){
         do{
             try{
                 let result = seeleJSONRPC.sendSync("getBlock",host,"",-1,false);
-                if (result.header!=undefined && result.header.Height!=undefined){
+                if (result.header!=undefined &amp;&amp; result.header.Height!=undefined){
                     options.startHeight = result.header.Height;
                     startHeight = options.startHeight
                 }
@@ -216,7 +257,7 @@ let validateTransactionTopicParams = function (host,options){
 }
 let listenTransaction = function(host, options, eventEmitter) {
     let err = validateTransactionTopicParams(host,options);
-    if (err != null && err != ""){
+    if (err != null &amp;&amp; err != ""){
         return err.toString();
     }
     let blockHeight = options.startHeight;
@@ -258,11 +299,11 @@ let validateDebtTopicParams = function (host,options){
         return new Error("option is undefined");
     }
     let account = options.account;
-    if (account != undefined && !utils.valid(account)){
+    if (account != undefined &amp;&amp; !utils.valid(account)){
         return new Error("option to address is invalid");
     }
     let debthash = options.debthash;
-    if (debthash == undefined && account == undefined){
+    if (debthash == undefined &amp;&amp; account == undefined){
         return new Error("subscription debt should define at least one option:debthash, account");
     }
 
@@ -276,7 +317,7 @@ let validateDebtTopicParams = function (host,options){
         do{
             try{
                 let result = seeleJSONRPC.sendSync("getBlock",host,"",-1,false);
-                if (result.header!=undefined && result.header.Height!=undefined){
+                if (result.header!=undefined &amp;&amp; result.header.Height!=undefined){
                     options.startHeight = result.header.Height;
                     startHeight = options.startHeight
                 }
@@ -292,7 +333,7 @@ let validateDebtTopicParams = function (host,options){
 }
 let listenDebt = function(host, options, eventEmitter) {
     let err = validateDebtTopicParams(host,options);
-    if (err != null && err != ""){
+    if (err != null &amp;&amp; err != ""){
         return err.toString();
     }
     let blockHeight = options.startHeight;
@@ -324,7 +365,7 @@ let listenDebt = function(host, options, eventEmitter) {
 
 function filterTxhashFromBlock(block,txhash){
     let txs = block.transactions;
-    for (var i=0; i< txs.length; i++){
+    for (var i=0; i&lt; txs.length; i++){
         if(txs[i].hash==txhash){
             return txs[i];
         }
@@ -335,7 +376,7 @@ function filterTxhashFromBlock(block,txhash){
 function filterAccountTxsFromBlock(block,account){
     let txs = block.transactions;
     let retTxs = [];
-    for (var i=0; i< txs.length; i++){
+    for (var i=0; i&lt; txs.length; i++){
         if(txs[i].from==account || txs[i].to==account){
             retTxs.push(txs[i]);
         }
@@ -346,12 +387,12 @@ function filterAccountTxsFromBlock(block,account){
 function filterAddressTxsFromBlock(block,from,to) {
     let txs = block.transactions;
     let retTxs = [];
-    for (var i=0; i< txs.length; i++){
-        if(from != undefined && to == undefined && txs[i].from==from){ // only filter from
+    for (var i=0; i&lt; txs.length; i++){
+        if(from != undefined &amp;&amp; to == undefined &amp;&amp; txs[i].from==from){ // only filter from
             retTxs.push(txs[i]);
-        }else if (from == undefined && to != undefined && txs[i].to==to){ // only filter to
+        }else if (from == undefined &amp;&amp; to != undefined &amp;&amp; txs[i].to==to){ // only filter to
             retTxs.push(txs[i]);
-        }else if (from != undefined && to != undefined && txs[i].from==from && txs[i].to==to){
+        }else if (from != undefined &amp;&amp; to != undefined &amp;&amp; txs[i].from==from &amp;&amp; txs[i].to==to){
             retTxs.push(txs[i]);
         } // filter both from and to
     }
@@ -360,7 +401,7 @@ function filterAddressTxsFromBlock(block,from,to) {
 
 function filterDebthashFromBlock(block,debthash){
     let debts = block.debts;
-    for (var i=0; i< debts.length; i++){
+    for (var i=0; i&lt; debts.length; i++){
         if(debts[i].Hash==debthash){
             return debts[i];
         }
@@ -371,7 +412,7 @@ function filterDebthashFromBlock(block,debthash){
 function filterAccountDebtsFromBlock(block,account){
     let debts = block.debts;
     let retDebts = [];
-    for (var i=0; i< debts.length; i++){
+    for (var i=0; i&lt; debts.length; i++){
         if(debts[i].Data.Account==account){
             retDebts.push(debts[i]);
         }
@@ -380,3 +421,22 @@ function filterAccountDebtsFromBlock(block,account){
 }
 
 module.exports = Subscription;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Jan 27 2020 10:59:48 GMT-0800 (Pacific Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
