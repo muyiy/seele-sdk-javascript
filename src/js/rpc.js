@@ -1,58 +1,74 @@
 var commands = module.exports.commands = {
-  "seele" : [
+  "seele":[
+    'getInfo',
+    'getBalance',
     'addTx',
-    'call',
-    'estimateGas',
-    'generatePayload',
     'getAccountNonce',
-    'getBalance', // account:string - wallet address
-    'getBlock',
     'getBlockHeight',
+    'getBlock',
+    'getBlockByHash',
+    'getBlockByHeight',
+    'call',
     'getLogs',
-    'getInfo', // no parameters
-    'isListening',
-    'isSyncing'
-  ],
-  "txpool" : [
-    'getAccountTransactions',
+    'getCode',
+    'generatePayload',
+    'estimateGas',
     'getBlockTransactionCount',
-    'getBlockTransactions',
-    'getBlockTransactionsByHeight',
-    'getBlockTransactionsByHash',
-    'getDebtByHash',
-    'getGasPrice',
+    'getBlockTransactionCountByHeight',
+    'getBlockTransactionCountByHash',
     'getTransactionByBlockIndex',
-    'getTransactionByHash',
-    'getTransactionsFrom',
-    'getTransactionsTo',
+    'getTransactionByBlockHeightAndIndex',
+    'getTransactionByBlockHashAndIndex',
     'getReceiptByTxHash'
   ],
-  "network" : [
-    'getPeerCount',
-    'getPeersInfo',
-    'getProtocolVersion',
-    'getNetworkID',
-    'getNetworkVersion',
-    'isListening'
-  ],
-  "miner" : [
-    'getCoinbase',
-    'getCurrentWorkHeader',
-    'getEngineInfo',
-    'setThreads',
-    'setCoinbase',
-    'start',
-    'status',
-    'stop',
-  ],
-  "debug" : [
-    'dumpHeap',
-    'getPendingDebts',
-    'getPendingTransactions',
+  "txpool":[
+    'getTransactionByHash',
+    'getDebtByHash',
+    'getGasPrice',
+    'getTransactionsFrom',
+    'getTransactionsTo',
+    'getAccountTransactions',
+    'getBlockTransactionsByHeight',
+    'getBlockTransactionsByHash',
     'getTxPoolContent',
     'getTxPoolTxCount',
+    'getPendingTransactions',
+    'getPendingDebts'
+  ],
+  "download":[
+    'getStatus',
+    'isSyncing'
+  ],
+  "network":[
+    'getPeersInfo',
+    'getPeerCount',
+    'getNetVersion',
+    'getProtocolVersion',
+    'getNetworkID',
+    'isListening'
+  ],
+  "miner":[
+    'start',
+    'stop',
+    'status',
+    'getCoinbase',
+    'getTarget',
+    'getWork',
+    'setThreads',
+    'setCoinbase',
+    'getThreads'
+  ],
+  "debug":[
     'printBlock',
-  ]}
+    'dumpHeap',
+    'getTPS',
+    'dumpHeap'
+  ],
+  "monitor":[
+    'nodeInfo',
+    'nodeStats'
+  ]
+}
 
 var isCommand = module.exports.isCommand = function(command) {
   for (const namespace in commands) {
