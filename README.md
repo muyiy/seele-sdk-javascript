@@ -12,6 +12,16 @@ npm test
 # npm test test/keystore.test
 ```
 
+## Dev
+
+1. code changes
+0. test
+0. document changes
+0. generate document 
+0. update npm version
+0. git commit
+0. npm publish
+
 ## Doc
 
 Full API reference and more tutorials are linked [here]("").
@@ -44,5 +54,5 @@ There are two html documentation styles:
 3. more related to mac
   ```bash
   brew install pyenv
-  
+
   ```

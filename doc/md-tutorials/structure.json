@@ -3,12 +3,12 @@
       "title": "Namespace functions"
     },
     "1-rpc": {
-      "title": "Using rpc"
+      "title": "rpc example"
     },
     "2-contract": {
-      "title": "Using contract"
+      "title": "contract example"
     },
     "3-subscribe": {
-      "title": "Using subscribe"
+      "title": "subscribe example"
     }
 }
