@@ -1,5 +1,5 @@
 var commands = module.exports.commands = {
-  "seele": [
+  "seele":[
     'getInfo',
     'getBalance',
     'addTx',
@@ -10,50 +10,61 @@ var commands = module.exports.commands = {
     'getBlockByHeight',
     'call',
     'getLogs',
+    'getCode',
     'generatePayload',
-    'estimateGas'
-  ],
-  "txpool": [
+    'estimateGas',
     'getBlockTransactionCount',
     'getBlockTransactionCountByHeight',
     'getBlockTransactionCountByHash',
     'getTransactionByBlockIndex',
     'getTransactionByBlockHeightAndIndex',
     'getTransactionByBlockHashAndIndex',
+    'getReceiptByTxHash'
+  ],
+  "txpool":[
     'getTransactionByHash',
-    'getReceiptByTxHash',
-    'getDebtByHash'
+    'getDebtByHash',
+    'getGasPrice',
+    'getTransactionsFrom',
+    'getTransactionsTo',
+    'getAccountTransactions',
+    'getBlockTransactionsByHeight',
+    'getBlockTransactionsByHash',
+    'getTxPoolContent',
+    'getTxPoolTxCount',
+    'getPendingTransactions',
+    'getPendingDebts'
   ],
-  "download": [
-    'getStatus'
+  "download":[
+    'getStatus',
+    'isSyncing'
   ],
-  "network": [
+  "network":[
     'getPeersInfo',
     'getPeerCount',
     'getNetVersion',
     'getProtocolVersion',
-    'getNetworkID'
+    'getNetworkID',
+    'isListening'
   ],
-  "miner": [
+  "miner":[
     'start',
     'stop',
     'status',
     'getCoinbase',
+    'getTarget',
+    'getWork',
     'setThreads',
     'setCoinbase',
-    'getThreads',
-    'getHashrate'
+    'getThreads'
   ],
-  "debug": [
+  "debug":[
     'printBlock',
-    'getTxPoolContent',
-    'getTxPoolTxCount',
-    'getPendingTransactions',
-    'getPendingDebts',
     'dumpHeap',
-    'getTPS'
+    'getTPS',
+    'dumpHeap'
   ],
-  "monitor": [
+  "monitor":[
     'nodeInfo',
     'nodeStats'
   ]
