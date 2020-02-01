@@ -9,7 +9,7 @@ var commands = module.exports.commands = {
     'getBlockByHash',
     'getBlockByHeight',
     'call',
-    'getLogsfalse',
+    'getLogs',
     'getCode',
     'generatePayload',
     'estimateGas',
