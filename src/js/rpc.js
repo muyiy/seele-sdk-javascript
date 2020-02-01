@@ -9,7 +9,7 @@ var commands = module.exports.commands = {
     'getBlockByHash',
     'getBlockByHeight',
     'call',
-    'getLogs',
+    'getLogsfalse',
     'getCode',
     'generatePayload',
     'estimateGas',
@@ -19,17 +19,18 @@ var commands = module.exports.commands = {
     'getTransactionByBlockIndex',
     'getTransactionByBlockHeightAndIndex',
     'getTransactionByBlockHashAndIndex',
-    'getReceiptByTxHash'
+    'getReceiptByTxHash',
+    'getTransactionsFrom',
+    'getTransactionsTo',
+    'getAccountTransactions',
+    'getBlockTransactions',
+    'getBlockTransactionsByHeight',
+    'getBlockTransactionsByHash'
   ],
   "txpool":[
     'getTransactionByHash',
     'getDebtByHash',
     'getGasPrice',
-    'getTransactionsFrom',
-    'getTransactionsTo',
-    'getAccountTransactions',
-    'getBlockTransactionsByHeight',
-    'getBlockTransactionsByHash',
     'getTxPoolContent',
     'getTxPoolTxCount',
     'getPendingTransactions',
@@ -61,8 +62,7 @@ var commands = module.exports.commands = {
   "debug":[
     'printBlock',
     'dumpHeap',
-    'getTPS',
-    'dumpHeap'
+    'getTPS'
   ],
   "monitor":[
     'nodeInfo',
