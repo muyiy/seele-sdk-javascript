@@ -30,7 +30,7 @@ Full API reference and more tutorials are linked [here](https://seele.pro/docs/j
 
 There are two html documentation styles:
 
-1. [sphinx]("http://sphinx-doc.org/") with [Read the Docs]("https://github.com/readthedocs/sphinx_rtd_theme") theme.
+1. [sphinx](http://sphinx-doc.org/) with [Read the Docs](https://github.com/readthedocs/sphinx_rtd_theme) theme.
 
   - Install sphinx packages.
   ```bash
@@ -44,7 +44,7 @@ There are two html documentation styles:
   npm run docs
   ```
 
-2. [jsdoc](https://devdocs.io/jsdoc/) with [minami]("https://github.com/nijikokun/minami") theme.
+2. [jsdoc](https://devdocs.io/jsdoc/) with [minami](https://github.com/nijikokun/minami) theme.
 
   - Generate.
   ```bash

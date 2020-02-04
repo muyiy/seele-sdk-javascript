@@ -1,6 +1,6 @@
 {
   "name": "seele-sdk-javascript",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "seele's javascript sdk",
   "main": "sle.js",
   "dependencies": {
