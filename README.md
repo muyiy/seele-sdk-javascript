@@ -24,7 +24,7 @@ npm test
 
 ## Doc
 
-Full API reference and more tutorials are linked [here]("https://seele.pro/docs/jsdoc/index.html").
+Full API reference and more tutorials are linked [here](https://seele.pro/docs/jsdoc/index.html).
 
 ## Doc generation
 
