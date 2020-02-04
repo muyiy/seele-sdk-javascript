@@ -17,14 +17,14 @@ npm test
 1. code changes
 0. test
 0. document changes
-0. generate document 
+0. generate document
 0. update npm version
 0. git commit
 0. npm publish
 
 ## Doc
 
-Full API reference and more tutorials are linked [here]("").
+Full API reference and more tutorials are linked [here]("https://seele.pro/docs/jsdoc/index.html").
 
 ## Doc generation
 
