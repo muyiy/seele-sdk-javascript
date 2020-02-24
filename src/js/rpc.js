@@ -1,5 +1,6 @@
 var commands = module.exports.commands = {
   "seele":[
+    'subGen',
     'getInfo',
     'getBalance',
     'addTx',
@@ -98,6 +99,13 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
 
 /**@class */
 class seeleJSONRPC {
+
+  /**
+   * constructor - Initialize rpc object
+   * method
+   * @param  {string} address node address
+   * @param  {string} timeout timeout number
+   */
   constructor(address, timeout) {
     this.host = address || 'http://localhost:8037';
     this.timeout = timeout || 30000;

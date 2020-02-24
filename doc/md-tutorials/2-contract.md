@@ -2,7 +2,7 @@
 
 ```javascript
 const sle = require('seele-sdk-javascript')
-var contract = new sle.contract(abi, address)
+var contract = new sle.contract(address, abi)
 
 // The abi would be abi generated from solidity contract compilation, if the method of the abi is an event (instead of a function, which this feature is designed for) The byteCode field of result would be undefined
 var result = contract.yourMethod(...yourArguments)
