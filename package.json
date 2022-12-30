@@ -27,7 +27,7 @@
     "deasync": "^0.1.19",
     "jsdoc": "^3.6.3",
     "minami": "^1.2.3",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "mustache": "^4.0.0",
     "terminal-kit": "^1.32.2",
     "typescript": "^3.7.4"
