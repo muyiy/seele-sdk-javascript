@@ -29,7 +29,7 @@
     "minami": "^1.2.3",
     "mocha": "^6.2.2",
     "mustache": "^4.0.0",
-    "terminal-kit": "^1.32.2",
+    "terminal-kit": "^2.1.8",
     "typescript": "^3.7.4"
   },
   "scripts": {
